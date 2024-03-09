@@ -10,10 +10,12 @@ public abstract class Animal : MonoBehaviour
     [SerializeField]
     protected float jumpSpeed;
 
+    // ABSTRACTION
     private void OnMouseDown()
     {
         Speak();
         Jump();
+        DisplayName();
     }
 
     private void Speak()
@@ -25,4 +27,6 @@ public abstract class Animal : MonoBehaviour
     {
         animalRb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
     }
+
+    protected abstract void DisplayName();
 }
